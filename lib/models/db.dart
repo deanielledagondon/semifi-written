@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import './todo_model.dart';
+import './todos.dart';
 
 class DatabaseConnect {
   Database? _database;
@@ -20,7 +20,7 @@ class DatabaseConnect {
       CREATE TABLE todo(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT,
-        creationDate TEXT,
+        createdAt TEXT,
         isChecked INTEGER
       )
     ''');
@@ -56,7 +56,7 @@ class DatabaseConnect {
       (i) => TaskModel(
         id: items[i]['id'],
         title: items[i]['title'],
-        creationDate: DateTime.parse(items[i]['creationDate']),
+        createdAt: DateTime.parse(items[i]['createdAt']),
         isChecked: items[i]['isChecked'] == 1 ? true : false,
       ),
     );

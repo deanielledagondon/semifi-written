@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/todo_model.dart';
+import '../models/todos.dart';
 
 class UserInput extends StatelessWidget {
   final textController = TextEditingController();
@@ -36,7 +36,7 @@ class UserInput extends StatelessWidget {
             onTap: () {
               var myTodo = TaskModel(
                   title: textController.text,
-                  creationDate: DateTime.now(),
+                  createdAt: DateTime.now(),
                   isChecked: false);
               insertData(myTodo);
             },

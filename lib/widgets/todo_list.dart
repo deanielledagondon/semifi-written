@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/db_model.dart';
+import '../models/db.dart';
 import './todo_card.dart';
 
 class Todolist extends StatelessWidget {
@@ -29,7 +29,7 @@ class Todolist extends StatelessWidget {
                   itemBuilder: (context, i) => TodoCard(
                     id: data[i].id,
                     title: data[i].title,
-                    creationDate: data[i].creationDate,
+                    createdAt: data[i].createdAt,
                     isChecked: data[i].isChecked,
                     insert: insertTask,
                     delete: deleteTask,

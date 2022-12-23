@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/db_model.dart';
-import '../models/todo_model.dart';
+import '../models/db.dart';
+import '../models/todos.dart';
 import '../widgets/user_input.dart';
 import '../widgets/todo_list.dart';
 

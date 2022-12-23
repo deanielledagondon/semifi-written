@@ -1,13 +1,13 @@
 class TaskModel {
   int? id;
   final String title;
-  DateTime creationDate;
+  DateTime createdAt;
   bool isChecked;
 
   TaskModel({
     this.id,
     required this.title,
-    required this.creationDate,
+    required this.createdAt,
     required this.isChecked,
   });
 
@@ -15,13 +15,13 @@ class TaskModel {
     return {
       'id': id,
       'title': title,
-      'creationDate': creationDate.toString(),
+      'creationDate': createdAt.toString(),
       'isChecked': isChecked ? 1 : 0,
     };
   }
 
   @override
   String toString() {
-    return 'TaskModel(id : $id, title : $title, creationDate : $creationDate, isChecked : $isChecked)';
+    return 'TaskModel(id : $id, title : $title, createdAt : $createdAt, isChecked : $isChecked)';
   }
 }

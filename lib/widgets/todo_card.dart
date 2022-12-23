@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/todo_model.dart';
+import '../models/todos.dart';
 
 class TodoCard extends StatefulWidget {
   final int id;
   final String title;
-  final DateTime creationDate;
+  final DateTime createdAt;
   bool isChecked;
   final Function insert;
   final Function delete;
@@ -13,7 +13,7 @@ class TodoCard extends StatefulWidget {
   TodoCard(
       {required this.id,
       required this.title,
-      required this.creationDate,
+      required this.createdAt,
       required this.isChecked,
       required this.insert,
       required this.delete,
@@ -30,7 +30,7 @@ class _TodoCardState extends State<TodoCard> {
     var anotherTodo = TaskModel(
         id: widget.id,
         title: widget.title,
-        creationDate: widget.creationDate,
+        createdAt: widget.createdAt,
         isChecked: widget.isChecked);
     //
     return Card(
@@ -63,7 +63,7 @@ class _TodoCardState extends State<TodoCard> {
                 const SizedBox(height: 5),
                 Text(
                   DateFormat('dd MMM yyyy - hh:mm aaa')
-                      .format(widget.creationDate),
+                      .format(widget.createdAt),
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
